@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Education Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            background-color: #ff6b6b;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #ff4c4c;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Education Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                fact: "Oldest University",
+                description: "The University of Bologna, founded in 1088 in Italy, is often considered the oldest university in continuous operation. It was one of the first institutions to use the term 'universitas' to describe a community of teachers and scholars."
+            },
+            {
+                fact: "First Public School",
+                description: "The first public school in the United States was established in Boston in 1635. It was called the Boston Latin School and is still in operation today."
+            },
+            {
+                fact: "Global Literacy Rates",
+                description: "As of recent years, global literacy rates have improved significantly, with UNESCO reporting that the world literacy rate for adults is over 86%."
+            },
+            {
+                fact: "Montessori Method",
+                description: "The Montessori method of education, developed by Dr. Maria Montessori in the early 1900s, emphasizes hands-on, child-centered learning and has been adopted in many schools worldwide."
+            },
+            {
+                fact: "Longest School Day",
+                description: "In Japan, students often have one of the longest school days in the world, with classes typically running from 8:30 AM to 3:30 PM, followed by after-school clubs and activities."
+            },
+            {
+                fact: "Education and Income",
+                description: "Studies have shown that higher levels of education are correlated with higher income levels. On average, individuals with a bachelor's degree earn significantly more over their lifetime compared to those with only a high school diploma."
+            },
+            {
+                fact: "Online Learning Growth",
+                description: "The rise of the internet has transformed education, with online learning platforms like Coursera and edX offering courses from top universities to millions of students around the world."
+            },
+            {
+                fact: "First Female Graduate",
+                description: "The first woman to graduate from an American college was Elizabeth Blackwell, who earned her medical degree from Geneva Medical College in New York in 1849."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const selectedFact = facts[randomIndex];
+            document.getElementById('fact').innerText = `${selectedFact.fact}: ${selectedFact.description}`;
+        });
+    </script>
+</body>
+</html>
